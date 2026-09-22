@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #111;
+    color: rgb(238, 196, 60);
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: rgb(238, 196, 60);
+}
+
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    gap: 50px;
+    min-height: 420px;
+}
+
+.hero-text {
+    width: 45%;
+}
+
+.hero-text h1 {
+    font-size: 46px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 19px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.hero img {
+    display: block;
+    width: 40%;
+    max-width: 420px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    background: #ff9900;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #e88600;
+}
+
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: center;
+    padding: 50px 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    width: 250px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+    margin: 10px 0;
+}
+
+
+/* READING IMAGE SECTION */
+.reading-section {
+    text-align: center;
+    padding: 50px 8%;
+}
+
+.reading-section img {
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* BOOK RESULTS */
+.recommendations {
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.book-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book-card h3 {
+    font-size: 17px;
+}
+
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero img {
+        width: 90%;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+}

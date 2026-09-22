@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Books - BookAI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">📚 BookAI</div>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/explore">Explore</a>
+        </div>
+    </nav>
+
+    <section class="explore">
+
+        <h1>Find Your Next Read</h1>
+
+        <p>Choose your mood and discover books you'll love.</p>
+
+        <form method="POST">
+
+            <label for="mood">How are you feeling today?</label>
+
+            <select name="mood" id="mood">
+                <option value="">Any Mood</option>
+                <option value="Happy">😊 Happy</option>
+                <option value="Sad">😢 Sad</option>
+                <option value="Thriller">🔪 Thriller</option>
+                <option value="Motivational">💪 Motivational</option>
+            </select>
+
+            <button type="submit">✨ Recommend Books</button>
+
+        </form>
+
+
+        {% if recommendations %}
+
+        <div class="recommendations">
+
+            <h2>📚 Recommended Books For You</h2>
+
+            <div class="book-grid">
+
+                {% for book in recommendations %}
+
+                <div class="book-card">
+
+                  <img src="{{ book.image }}" alt="{{ book.title }}">
+
+                  <h3>{{ book.title }}</h3>
+
+                  <p><strong>Author:</strong> {{ book.author }}</p>
+
+                  <p><strong>Year:</strong> {{ book.year }}</p>
+
+                   <p><strong>Publisher:</strong> {{ book.publisher }}</p>
+
+           </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        {% elif request.method == "POST" %}
+
+        <div class="no-results">
+            <p>Sorry, we couldn't find recommendations for this mood.</p>
+        </div>
+
+        {% endif %}
+
+    </section>
+
+</body>
+</html>
